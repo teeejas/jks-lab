@@ -1,0 +1,58 @@
+terraform {
+  backend "s3" {
+    bucket = "sg-atlantis-tfstate101"
+    key    = "tfhome/atlantis/demo1/tfstate.tf"
+    region = "us-east-1"
+    encrypt = true	
+  }
+}
+ 
+#--------------------------------------------------------------
+# Remote state on s3
+#--------------------------------------------------------------
+/*
+terraform {
+
+  backend "s3" {
+    bucket               = "sg-atlantis-tfstate10"
+    #key                  = ""
+    ##workspace_key_prefix = "demo"
+    region               = "us-east-1"
+    dynamodb_table       = "tfstate100"
+    encrypt              = true
+
+  }
+
+}
+
+ 
+
+#--------------------------------------------------------------
+
+# Sourcing Tag Remote State into this repo
+
+#--------------------------------------------------------------
+
+data "terraform_remote_state" "global-tags" {
+
+  backend = "s3"
+  config = {
+    bucket = "bessemer-terraform"
+    key    = "${var.env}/global/static_data/group/tags/terraform.tfstate"
+    region = "us-east-1"
+  }
+
+}
+
+#--------------------------------------------------------------
+# Sourcing aws accounts Remote State into this repo
+#--------------------------------------------------------------
+data "terraform_remote_state" "aws-accounts" {
+  backend = "s3"
+  config = {
+    bucket = "bessemer-terraform"
+    key    = "${var.env}/global/static_data/group/accounts/aws/terraform.tfstate"
+    region = "us-east-1"
+  }
+}
+*/
