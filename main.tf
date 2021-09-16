@@ -6,11 +6,11 @@ provider "aws" {
 module "webserver" {
     source = "./modules/webserver"
 }
-/*
+
 module  "webserver2" {
     source = "./modules/webserver2"
 }
-*/
+
 
 
 
